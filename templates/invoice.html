@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Criar Fatura - Lightning Wallet{% endblock %}
+
+{% block content %}
+    <h2>⚡ Gerar Fatura</h2>
+    <form method="post">
+        <label>Valor (sats):</label>
+        <input type="number" name="amount" placeholder="Digite o valor em sats" required>
+        
+        <label>Descrição:</label>
+        <input type="text" name="memo" placeholder="Opcional">
+        
+        <button type="submit">🔧 Gerar Fatura</button>
+    </form>
+
+    {% if invoice %}
+        <h3>📄 Fatura Gerada:</h3>
+        <div class="invoice-box">
+            <input type="text" value="{{ invoice }}" id="invoice-text" readonly>
+            <button onclick="copyInvoice()">📋 Copiar</button>
+        </div>
+        
+        <h3>📷 QR Code:</h3>
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ invoice }}" alt="QR Code">
+        </div>
+    {% endif %}
+
+    <div class="menu">
+        <a href="{{ url_for('dashboard') }}">🏠 Voltar ao Dashboard</a>
+    </div>
+
+    <script>
+        function copyInvoice() {
+            var copyText = document.getElementById("invoice-text");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Fatura copiada!");
+        }
+    </script>
+{% endblock %}

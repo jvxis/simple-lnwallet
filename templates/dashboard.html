@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Lightning Wallet{% endblock %}
+
+{% block content %}
+    <h2>📡 Node Status</h2>
+    <pre>
+Alias do Node:   {{ node_info.alias }}
+Versão do LND:   {{ node_info.version }}
+Número de Canais: {{ node_info.num_active_channels }}
+
+🔄 Sincronizado com Blockchain: {{ synced_to_chain }}
+🌍 Sincronizado com Rede Lightning: {{ synced_to_graph }}
+    </pre>
+
+    <h2>💰 Saldo</h2>
+    <pre>
+Saldo Onchain:   {{ "{:,}".format(balance.confirmed_balance) }} sats 
+                ({{ "{:,.8f}".format(balance.confirmed_balance / 100_000_000) }} BTC)
+
+Saldo Lightning: {{ "{:,}".format(channel_balance.local_balance.sat) }} sats 
+                ({{ "{:,.8f}".format(channel_balance.local_balance.sat / 100_000_000) }} BTC)
+    </pre>
+
+    <div class="menu">
+        <a href="{{ url_for('invoice') }}">⚡ Criar Fatura</a>
+        <a href="{{ url_for('pay') }}">💸 Pagar Fatura</a>
+    </div>
+{% endblock %}

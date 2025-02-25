@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Pagar Fatura - Lightning Wallet{% endblock %}
+
+{% block content %}
+    <h2>💸 Pagar Fatura</h2>
+    <form method="post">
+        <label>Invoice (Fatura Lightning):</label>
+        <input type="text" name="payment_request" placeholder="Cole a fatura aqui" required>
+        
+        <button type="submit">💳 Pagar</button>
+    </form>
+
+    {% if result %}
+        <h3>✅ Resultado do Pagamento:</h3>
+        <div class="payment-box">
+            <pre>{{ result | tojson(indent=2) | replace("\\", "") }}</pre>
+        </div>
+    {% endif %}
+
+    <div class="menu">
+        <a href="{{ url_for('dashboard') }}">🏠 Voltar ao Dashboard</a>
+    </div>
+{% endblock %}
