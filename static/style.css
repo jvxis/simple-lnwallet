@@ -232,19 +232,19 @@ button:hover {
 /* 🔹 Ajuste final para telas menores */
 @media screen and (max-width: 768px) {
     .terminal {
-        width: 98%;
+        width: 90%;
         padding: 15px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .menu a {
-        flex: 1 1 90%;
+        flex: 1 1 85%;
     }
 
     .status-box span {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
