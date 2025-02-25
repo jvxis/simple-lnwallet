@@ -25,8 +25,8 @@ sudo apt update && sudo apt install xxd -y
 Clone este repositório e instale os pacotes:
 
 ```bash
-git clone https://github.com/seu-usuario/lightning-wallet.git
-cd lightning-wallet
+git clone https://github.com/jvxis/simple-lnwallet.git
+cd simple-lnwallet
 python3 -m venv venv
 source venv/bin/activate  # No Windows use: venv\Scripts\activate
 pip3 install -r requirements.txt
