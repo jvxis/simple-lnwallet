@@ -2,6 +2,8 @@
 
 Este é um **serviço web minimalista de carteira Lightning Network** que se conecta a um node LND via gRPC.  
 Ele permite visualizar informações do node, criar faturas e pagar invoices.
+![image](https://github.com/user-attachments/assets/cd4e5090-eb3a-455a-b9b5-a4b897313733)
+![image](https://github.com/user-attachments/assets/db97c717-b624-4ea8-9ecd-666feeb0b7f6)
 
 🚀 **Tecnologias usadas**:
 - Python + Flask
