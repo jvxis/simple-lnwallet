@@ -4,4 +4,3 @@ grpcio-tools
 protobuf
 gunicorn
 qrcode[pil]
-sqlite3
